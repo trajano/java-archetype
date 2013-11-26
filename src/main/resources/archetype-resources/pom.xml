@@ -8,9 +8,9 @@
 	</parent>
 	<groupId>${groupId}</groupId>
 	<artifactId>${artifactId}</artifactId>
-	<name>Commons Testing</name>
+	<name>${projectName}</name>
 	<version>${version}</version>
-	<description>This provides the common unit testing code.</description>
+	<description>${projectDescription}</description>
 	<scm>
 		<connection>scm:git:https://github.com/trajano/${project.artifactId}</connection>
 		<developerConnection>scm:git:ssh://git@github.com/trajano/${project.artifactId}.git</developerConnection>
@@ -18,14 +18,9 @@
 	</scm>
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>1.9.5</version>
+			<groupId>net.trajano.commons</groupId>
+			<artifactId>commons-testing</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
