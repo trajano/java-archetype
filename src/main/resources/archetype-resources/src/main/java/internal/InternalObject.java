@@ -11,5 +11,6 @@ public class InternalObject {
      *
      */
     public void method() {
+        // ...
     }
 }
