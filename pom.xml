@@ -1,84 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>net.trajano.archetype</groupId>
-  <artifactId>java-archetype</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>maven-archetype</packaging>
-  <parent>
-  <groupId>net.trajano</groupId>
-  <artifactId>trajano</artifactId>
-  <version>5-SNAPSHOT</version>
-  </parent>
-  <name>Java Project Archetype</name>
+	<groupId>net.trajano.archetype</groupId>
+	<artifactId>java-archetype</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>maven-archetype</packaging>
+	<parent>
+		<groupId>net.trajano</groupId>
+		<artifactId>trajano</artifactId>
+		<version>5-SNAPSHOT</version>
+	</parent>
+	<name>Java Project Archetype</name>
+	<description>This is an archetype type for a Java artifact.</description>
 
-  <build>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.archetype</groupId>
-        <artifactId>archetype-packaging</artifactId>
-        <version>2.2</version>
-      </extension>
-    </extensions>
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.archetype</groupId>
+				<artifactId>archetype-packaging</artifactId>
+				<version>2.2</version>
+			</extension>
+		</extensions>
 
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-archetype-plugin</artifactId>
-          <version>2.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-archetype-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
-  <description>This provides the common unit testing code.</description>
-
-  <url>http://site.trajano.net/java-archetype/</url>
-
-  <developers>
-    <developer>
-      <id>trajano</id>
-      <name>Archimedes Trajano</name>
-      <url>http://www.trajano.net/</url>
-      <organization>Trajano</organization>
-      <organizationUrl>http://www.trajano.net/</organizationUrl>
-      <roles>
-        <role>IT Consultant</role>
-        <role>Founder</role>
-      </roles>
-    </developer>
-  </developers>
-
-  <licenses>
-    <license>
-      <name>Eclipse Public License 1.0</name>
-      <url>LICENSE</url>
-      <comments>http://www.opensource.org/licenses/EPL-1.0</comments>
-    </license>
-  </licenses>
-
+	<url>http://site.trajano.net/${project.artifactId}/</url>
 	<scm>
 		<connection>scm:git:https://github.com/trajano/${project.artifactId}</connection>
 		<developerConnection>scm:git:ssh://git@github.com/trajano/${project.artifactId}.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
-
-  <distributionManagement>
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <name>Nexus Release Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-    </snapshotRepository>
-    <site>
-      <id>site.trajano.net</id>
-      <name>Trajano Maven Site Deployment</name>
-      <url>ftp://ftp.site.trajano.net/public_html/</url>
-    </site>
-  </distributionManagement>
 </project>
