@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>net.trajano</groupId>
 		<artifactId>trajano</artifactId>
-		<version>5-SNAPSHOT</version>
+		<version>5</version>
 	</parent>
 	<name>Java Project Archetype</name>
 	<description>This is an archetype type for a Java artifact.</description>

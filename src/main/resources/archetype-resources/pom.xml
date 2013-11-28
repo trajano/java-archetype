@@ -5,13 +5,16 @@
 	<parent>
 		<groupId>net.trajano</groupId>
 		<artifactId>trajano</artifactId>
-		<version>5-SNAPSHOT</version>
+		<version>5</version>
 	</parent>
 	<groupId>${groupId}</groupId>
 	<artifactId>${artifactId}</artifactId>
 	<name>${projectName}</name>
 	<version>${version}</version>
 	<description>${projectDescription}</description>
+	<properties>
+		<coding-standards.version>1.1.0</coding-standards.version>
+	</properties>
 	<scm>
 		<connection>scm:git:https://github.com/trajano/${project.artifactId}</connection>
 		<developerConnection>scm:git:ssh://git@github.com/trajano/${project.artifactId}.git</developerConnection>
@@ -25,6 +28,16 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>net.trajano</groupId>
+				<artifactId>coding-standards</artifactId>
+				<version>1.1.0</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
@@ -57,7 +70,7 @@
 						<dependency>
 							<groupId>net.trajano</groupId>
 							<artifactId>coding-standards</artifactId>
-							<version>1.0.1-SNAPSHOT</version>
+							<version>${coding-standards.version}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -145,7 +158,7 @@
 						<dependency>
 							<groupId>net.trajano</groupId>
 							<artifactId>coding-standards</artifactId>
-							<version>1.0.1-SNAPSHOT</version>
+							<version>${coding-standards.version}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -173,7 +186,7 @@
 						<dependency>
 							<groupId>net.trajano</groupId>
 							<artifactId>coding-standards</artifactId>
-							<version>1.0.1-SNAPSHOT</version>
+							<version>${coding-standards.version}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -206,7 +219,7 @@
 						<dependency>
 							<groupId>net.trajano</groupId>
 							<artifactId>coding-standards</artifactId>
-							<version>1.0.1-SNAPSHOT</version>
+							<version>${coding-standards.version}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -216,7 +229,7 @@
 			<extension>
 				<groupId>net.trajano</groupId>
 				<artifactId>coding-standards</artifactId>
-				<version>1.0.1-SNAPSHOT</version>
+				<version>${coding-standards.version}</version>
 			</extension>
 		</extensions>
 	</build>
