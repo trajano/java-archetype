@@ -1,1 +1,1 @@
-verify site org.codehaus.mojo:sonar-maven-plugin:2.2:sonar
+verify site org.codehaus.sonar:sonar-maven-plugin:4.1.2:sonar
