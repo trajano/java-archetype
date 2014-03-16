@@ -8,7 +8,7 @@
     </parent>
     <groupId>net.trajano.archetype</groupId>
     <artifactId>java-archetype</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>maven-archetype</packaging>
     <name>Java Project Archetype</name>
     <description>This is an archetype type for a Java artifact.</description>
