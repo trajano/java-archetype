@@ -4,7 +4,7 @@
     <parent>
         <groupId>net.trajano</groupId>
         <artifactId>trajano</artifactId>
-        <version>7</version>
+        <version>8</version>
     </parent>
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
@@ -25,23 +25,13 @@
         </site>
     </distributionManagement>
     <properties>
-        <coding-standards.version>1.1.1</coding-standards.version>
+        <surefire.version>2.17</surefire.version>
     </properties>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>net.trajano</groupId>
-                <artifactId>coding-standards</artifactId>
-                <version>${coding-standards.version}</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
         <dependency>
-            <groupId>net.trajano.commons</groupId>
-            <artifactId>commons-testing</artifactId>
-            <version>1.0.1</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -50,14 +40,7 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>2.11</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.trajano</groupId>
-                            <artifactId>coding-standards</artifactId>
-                            <version>${coding-standards.version}</version>
-                        </dependency>
-                    </dependencies>
+                    <version>2.12</version>
                     <configuration>
                         <configLocation>config/checkstyle-configuration.xml</configLocation>
                     </configuration>
@@ -72,7 +55,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.16</version>
+                    <version>${surefire.version}</version>
                     <executions>
                         <execution>
                             <id>integration-test</id>
@@ -136,14 +119,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.0.1</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.trajano</groupId>
-                            <artifactId>coding-standards</artifactId>
-                            <version>${coding-standards.version}</version>
-                        </dependency>
-                    </dependencies>
+                    <version>3.1</version>
                     <configuration>
                         <rulesets>
                             <ruleset>/config/pmd-rules.xml</ruleset>
@@ -153,16 +129,6 @@
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>2.6</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.trajano</groupId>
-                            <artifactId>coding-standards</artifactId>
-                            <version>${coding-standards.version}</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
                 <plugin>
                     <artifactId>maven-source-plugin</artifactId>
@@ -180,11 +146,11 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.16</version>
+                    <version>${surefire.version}</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-report-plugin</artifactId>
-                    <version>2.16</version>
+                    <version>${surefire.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.felix</groupId>
@@ -195,13 +161,6 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
                     <version>2.5.3</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.trajano</groupId>
-                            <artifactId>coding-standards</artifactId>
-                            <version>${coding-standards.version}</version>
-                        </dependency>
-                    </dependencies>
                     <configuration>
                         <excludeFilterFile>config/findbugs-exclude-filter.xml</excludeFilterFile>
                     </configuration>
@@ -209,7 +168,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.6.5.201403032054</version>
+                    <version>0.7.0.201403182114</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -247,7 +206,7 @@
             <extension>
                 <groupId>net.trajano</groupId>
                 <artifactId>coding-standards</artifactId>
-                <version>${coding-standards.version}</version>
+                <version>1.1.2</version>
             </extension>
         </extensions>
     </build>
@@ -333,34 +292,6 @@
                 </property>
             </activation>
             <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.eclipse.m2e</groupId>
-                            <artifactId>lifecycle-mapping</artifactId>
-                            <version>1.0.0</version>
-                            <configuration>
-                                <lifecycleMappingMetadata>
-                                    <pluginExecutions>
-                                        <pluginExecution>
-                                            <pluginExecutionFilter>
-                                                <groupId>com.despegar.maven.plugin</groupId>
-                                                <artifactId>maven-m2e-codestyle</artifactId>
-                                                <versionRange>[1.0.4,)</versionRange>
-                                                <goals>
-                                                    <goal>configure</goal>
-                                                </goals>
-                                            </pluginExecutionFilter>
-                                            <action>
-                                                <execute/>
-                                            </action>
-                                        </pluginExecution>
-                                    </pluginExecutions>
-                                </lifecycleMappingMetadata>
-                            </configuration>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
                 <plugins>
                     <plugin>
                         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -387,16 +318,16 @@
                         </executions>
                     </plugin>
                     <plugin>
-                        <groupId>com.despegar.maven.plugin</groupId>
-                        <artifactId>maven-m2e-codestyle</artifactId>
-                        <version>1.0.4</version>
+                        <groupId>net.trajano.mojo</groupId>
+                        <artifactId>m2e-codestyle-maven-plugin</artifactId>
+                        <version>1.1.0</version>
                         <executions>
                             <execution>
                                 <goals>
                                     <goal>configure</goal>
                                 </goals>
                                 <configuration>
-                                    <codeStyleBaseUrl>http://site.trajano.net/coding-standards/codestyle/</codeStyleBaseUrl>
+                                    <codeStyleBaseUrl>codestyle</codeStyleBaseUrl>
                                 </configuration>
                             </execution>
                         </executions>
