@@ -21,7 +21,7 @@
         <site>
             <id>gh-pages</id>
             <name>Trajano Github Pages</name>
-            <url>git:ssh://git@github.com/trajano/${project.artifactId}.git?gh-pages#</url>
+            <url>github:http://site.trajano.net/${project.artifactId}/</url>
         </site>
     </distributionManagement>
     <properties>

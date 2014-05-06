@@ -1,0 +1,4 @@
+Usage
+=====
+
+    mvn archetype:generate -DarchetypeArtifactId=${project.artifactId} -DarchetypeGroupId=${project.groupId} -DarchetypeVersion=${project.version}
